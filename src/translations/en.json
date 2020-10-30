@@ -2422,11 +2422,17 @@
               "name": "Calendar",
               "description": "The Calendar card displays a calendar including day, week and list views",
               "inital_view": "Initial View",
+              "event_display": "Event Display",
               "calendar_entities": "Calendar Entities",
               "views": {
                 "dayGridMonth": "Month",
                 "dayGridDay": "Day",
                 "listWeek": "List"
+              },
+              "displays": {
+                "auto": "Automatic",
+                "block": "Blocks",
+                "list-item": "Dots"
               }
             },
             "conditional": {

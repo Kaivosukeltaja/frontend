@@ -30,6 +30,7 @@ import { haStyle } from "../../resources/styles";
 import type {
   CalendarEvent,
   CalendarViewChanged,
+  FullCalendarDisplay,
   FullCalendarView,
   HomeAssistant,
   ToggleButton,
@@ -50,7 +51,7 @@ const defaultFullCalendarConfig: CalendarOptions = {
   initialView: "dayGridMonth",
   dayMaxEventRows: true,
   height: "parent",
-  eventDisplay: "list-item",
+  eventDisplay: "auto",
 };
 
 const viewButtons: ToggleButton[] = [
@@ -74,6 +75,8 @@ class HAFullCalendar extends LitElement {
   ];
 
   @property() public initialView: FullCalendarView = "dayGridMonth";
+
+  @property() public eventDisplay: FullCalendarDisplay = "auto";
 
   @internalProperty() private calendar?: Calendar;
 
@@ -193,6 +196,7 @@ class HAFullCalendar extends LitElement {
       ...defaultFullCalendarConfig,
       locale: this.hass.language,
       initialView: this.initialView,
+      eventDisplay: this.eventDisplay,
     };
 
     this._activeView = this.initialView;

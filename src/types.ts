@@ -155,6 +155,8 @@ export type FullCalendarView =
   | "dayGridDay"
   | "listWeek";
 
+export type FullCalendarDisplay = "auto" | "block" | "list-item";
+
 export interface ToggleButton {
   label: string;
   iconPath: string;
